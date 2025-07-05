@@ -29,8 +29,10 @@ header nav {
 main {
 	flex: auto;
 	display: flex;
-	align-items: center;
-	max-width: 1280px;
+	align-items: start;
+	padding-right: 5vmin;
+	padding-left: 5vmin;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 }
