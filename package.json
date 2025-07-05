@@ -13,6 +13,7 @@
 		"preact": "^10.25.3",
 		"preact-iso": "^2.9.2",
 		"preact-render-to-string": "^6.5.13",
+		"react-icons": "^5.5.0",
 		"tailwindcss": "^4.1.11"
 	},
 	"devDependencies": {

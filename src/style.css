@@ -37,19 +37,6 @@ header nav {
 	display: flex;
 }
 
-header a {
-	color: #fff;
-	padding: 0.75rem;
-	text-decoration: none;
-}
-
-header a.active {
-	background-color: #0005;
-}
-
-header a:hover {
-	background-color: #0008;
-}
 
 main {
 	flex: auto;
