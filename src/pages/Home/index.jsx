@@ -19,15 +19,22 @@ export function Home() {
     fetchProducts();
   }, []);
 
+  const filterProductsByWord = (word) => {
+    console.log(word, "aaaaaaaaaaa")
+    if (word) {
+      setFilterProductList(
+        productList.filter(
+          (prd) => prd.brand.includes(word) || prd.model.includes(word)
+        )
+      );
+    }else{
+      setFilterProductList(productList)
+    }
+  };
+
   return (
     <div className={"w-full p-5"}>
-      <div className={"flex justify-end"}>
-        <input 
-        className={"w-[30%] p-2 border-2 border-purple-500"} 
-        placeholder={"Search"} type="text"
-        onChange={searchProduct}
-        value={searchWord} />
-      </div>
+      <SearchProduct onSearch={filterProductsByWord}></SearchProduct>
 
       <ProductsList productList={filterProductList}></ProductsList>
 
