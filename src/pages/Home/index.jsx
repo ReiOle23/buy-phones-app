@@ -1,15 +1,23 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import preactLogo from "../../assets/preact.svg";
 import { ProductsList } from "../../components/ProductsList";
 import "./style.css";
+import { getProducts } from "../../api/service";
+import { SearchProduct } from "../../components/SearchProduct";
 
 export function Home() {
-  const [searchWord, setSearchWord] = useState("");
+  const [productList, setProductList] = useState([]);
+  const [filterProductList, setFilterProductList] = useState([]);
 
-  const searchProduct = (e) => {
-    setSearchWord(e.target.value);
-    console.log("point to endpoint", e.target.value);
-  }
+  const fetchProducts = async () => {
+    const products = await getProducts();
+    setProductList(products);
+    setFilterProductList(products);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className={"w-full p-5"}>
@@ -21,12 +29,11 @@ export function Home() {
         value={searchWord} />
       </div>
 
-      <ProductsList></ProductsList>
+      <ProductsList productList={filterProductList}></ProductsList>
 
       {/* <a href="https://preactjs.com" target="_blank">
         <img src={preactLogo} alt="Preact logo" height="160" width="160" />
       </a> */}
-
     </div>
   );
 }
