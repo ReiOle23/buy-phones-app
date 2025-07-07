@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import axios from "axios";
-import { AxiosError } from "axios";
 
 const apiClient = axios.create({
   baseURL: "https://itx-frontend-test.onrender.com/api",
@@ -19,7 +17,7 @@ export const getProducts = async (): Promise<any> => {
   }
 };
 
-export const getDetailProduct = async ({productId}): Promise<any> => {
+export const getDetailProduct = async (productId): Promise<any> => {
   try {
     const response = await apiClient.get(`/product/${productId}`);
     return response.data;

@@ -1,4 +1,3 @@
-import { useLocation } from "preact-iso";
 import { useState } from "preact/hooks";
 
 export function SearchProduct({ onSearch }) {
