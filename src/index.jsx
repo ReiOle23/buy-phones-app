@@ -4,6 +4,7 @@ import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
 import './style.css';
+import { ProductDetail } from './pages/ProductDetail/index.jsx';
 
 export function App() {
 	return (
@@ -12,6 +13,7 @@ export function App() {
 			<main>
 				<Router>
 					<Route path="/" component={Home} />
+					<Route path="/product/:productId" component={ProductDetail} />
 					<Route default component={NotFound} />
 				</Router>
 			</main>
