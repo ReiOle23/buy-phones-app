@@ -9,10 +9,10 @@ export function SearchProduct({ onSearch }) {
   };
 
   return (
-    <div className={"flex justify-end"}>
+    <div className={"w-full flex justify-end"}>
       <input
-        className={"w-[30%] p-2 border-2 border-purple-500"}
-        placeholder={"Search"}
+        className={"w-full sm:w-[50vmin] lg:w-[60vmin] p-2 border-2 rounded-sm border-purple-500"}
+        placeholder={"Searching here ... "}
         type="text"
         onInput={searchProduct}
         value={searchWord}

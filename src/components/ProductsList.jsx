@@ -6,7 +6,7 @@ export function ProductsList({ productList }) {
   console.log(productList);
 
   return (
-    <section className={"mt-10 grid grid-cols-4 gap-6"}>
+    <section className={"mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"}>
       {productList.map((prd) => {
         return (
           <ProductBox
@@ -28,12 +28,18 @@ function ProductBox(props) {
     <a
       id={props.id}
       href={`/product/${props.id}`}
-      class="h-[300px] cursor-pointer bg-[#d0b6ff] px-6 py-3 rounded-lg text-left no-underline text-[#222] border border-transparent hover:border-black hover:shadow-[0_25px_50px_-12px_#673ab888]"
+      class="h-[40vh] cursor-pointer bg-[#FFFFFF] px-6 py-3 rounded-lg text-left no-underline text-[#222] border border-transparent hover:shadow-[0_15px_30px_-12px_#673ab888]"
     >
-      <img className={"w-full h-[70%] bg-gray-500 mb-6 hover:drop-shadow-[0_0_2em_#673ab8aa]"} src={props.img} alt="" />
-      <h1 className={"text-"}>{props.brand}</h1>
+      <div className={"w-full h-[70%] p-10"}>
+        <img
+          className={"w-full h-[80%] bg-gray-500 mb-6"}
+          src={props.img}
+          alt=""
+        />
+      </div>
+      <h1 className={"font-bold text-[20px]"}>{props.model}</h1>
       <div className={"w-full flex justify-between"}>
-        <p>{props.model}</p>
+        <p>{props.brand}</p>
         <p>{props.price}€</p>
       </div>
     </a>

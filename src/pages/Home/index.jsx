@@ -35,10 +35,6 @@ export function Home() {
     <div className={"w-full p-5"}>
       <SearchProduct onSearch={filterProductsByWord}></SearchProduct>
       <ProductsList productList={filterProductList}></ProductsList>
-
-      {/* <a href="https://preactjs.com" target="_blank">
-        <img src={preactLogo} alt="Preact logo" height="160" width="160" />
-      </a> */}
     </div>
   );
 }

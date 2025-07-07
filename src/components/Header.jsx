@@ -7,14 +7,14 @@ export function Header() {
 
   return (
     <header>
-      <div className={"w-full h-[10vmin] px-[5%]"}>
+      <div className={"w-full h-[20vmin] sm:h-[10vmin] px-[5%]"}>
         <nav className={"w-full h-[70%] flex justify-between items-center"}>
-          <a href="/" className={"text-[#FFFFFF] text-[26px] font-bold no-underline cursor-pointer"}>
+          <a href="/" className={"text-[#FFFFFF] text-[30px] font-bold no-underline cursor-pointer"}>
             PhoneTime
           </a>
-          <div className={"flex cursor-pointer text-[#FFFFFF] gap-[8px]"}>
-            <IoCartOutline color="white" size={24}></IoCartOutline>
-            <span>0</span>
+          <div className={"flex items-center justify-center cursor-pointer text-[#FFFFFF] gap-[8px]"}>
+            <IoCartOutline color="white" size={35}></IoCartOutline>
+            <span class="text-[20px]">0</span>
           </div>
         </nav>
 
