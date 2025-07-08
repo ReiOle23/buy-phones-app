@@ -1,12 +1,11 @@
-import { useLocation } from "preact-iso";
-
 export function ProductsList({ productList }) {
-  const location = useLocation();
-
-  console.log(productList);
 
   return (
-    <section className={"mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"}>
+    <section
+      className={
+        "p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      }
+    >
       {productList.map((prd) => {
         return (
           <ProductBox
@@ -28,19 +27,22 @@ function ProductBox(props) {
     <a
       id={props.id}
       href={`/product/${props.id}`}
-      class="h-[40vh] cursor-pointer bg-[#FFFFFF] px-6 py-3 rounded-lg text-left no-underline text-[#222] border border-transparent hover:shadow-[0_15px_30px_-12px_#673ab888]"
+      class="h-[35vh] cursor-pointer px-6 py-3 rounded-lg text-left no-underline text-[#222] border border-transparent hover:shadow-[0_15px_30px_-12px_#673ab888]"
     >
-      <div className={"w-full h-[70%] p-10"}>
+      <div className="w-full xl:px-5 flex items-center justify-center">
         <img
-          className={"w-full h-[80%] bg-gray-500 mb-6"}
+          className="max-w-full max-h-full object-contain bg-gray-500 mb-6"
           src={props.img}
           alt=""
         />
       </div>
-      <h1 className={"font-bold text-[20px]"}>{props.model}</h1>
-      <div className={"w-full flex justify-between"}>
-        <p>{props.brand}</p>
-        <p>{props.price}€</p>
+      <div className={"flex flex-col justify-center items-center"}>
+        <h1 className={"text-[18px]"}>
+          {props.brand} {props.model}
+        </h1>
+        <div className={"font-bold text-[24px]"}>
+          <p>{props.price} €</p>
+        </div>
       </div>
     </a>
   );

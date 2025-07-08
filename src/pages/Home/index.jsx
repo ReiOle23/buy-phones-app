@@ -1,5 +1,4 @@
 import { useEffect, useState } from "preact/hooks";
-import preactLogo from "../../assets/preact.svg";
 import { ProductsList } from "../../components/ProductsList";
 import { getProducts } from "../../api/service";
 import { SearchProduct } from "../../components/SearchProduct";
