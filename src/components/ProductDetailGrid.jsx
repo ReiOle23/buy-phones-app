@@ -15,6 +15,10 @@ export function ProductDetailGrid({ product }) {
     );
   };
 
+  const joinList = (listProp) => {
+    return Array.isArray(listProp) ? listProp.join(" ") : listProp
+  }
+
   return (
     <div
       className={
@@ -51,8 +55,8 @@ export function ProductDetailGrid({ product }) {
               {productProperty("Screen", product.displayResolution)}
               {productProperty("Size", product.displaySize)}
               {productProperty("Battery", product.battery)}
-              {productProperty("Camera", product.primaryCamera.join(" "))}
-              {productProperty("Camera 2", product.secondaryCmera)}
+              {productProperty("Camera", joinList(product.primaryCamera))}
+              {productProperty("Camera 2", joinList(product.secondaryCmera))}
               {productProperty("Dimentions", product.dimentions)}
               {productProperty("Weight", product.weight)}
             </div>

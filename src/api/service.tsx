@@ -26,3 +26,13 @@ export const getDetailProduct = async (productId): Promise<any> => {
     throw error;
   }
 };
+
+export const addProductToCart = async (productData): Promise<any> => {
+  try {
+    const response = await apiClient.post(`/cart`, productData);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to post product", error);
+    throw error;
+  }
+};
